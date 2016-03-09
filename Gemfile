@@ -46,3 +46,6 @@ group :development do
 end
 
 gem 'angular-rails-templates'
+gem 'devise'
+gem 'omniauth'
+gem 'devise_token_auth'
