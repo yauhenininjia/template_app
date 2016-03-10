@@ -15,6 +15,10 @@
  *= require_self
  */
 
+ #page-content-wrapper .container-fluid .row .col-lg-12 {
+    margin-top: 40px;
+ }
+
 #wrapper {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
@@ -34,8 +38,9 @@
     width: 0;
     height: 100%;
     margin-left: -250px;
+    margin-top: 50px;
     overflow-y: auto;
-    background: #000;
+    background: #F8F8F8;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -81,8 +86,8 @@
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #fff;
-    background: rgba(255,255,255,0.2);
+    color: #000;
+    background: rgba(100,100,100,0.2);
 }
 
 .sidebar-nav li a:active,

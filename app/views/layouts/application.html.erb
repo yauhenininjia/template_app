@@ -9,19 +9,20 @@
 <body ng-app="templateApp">
 
 <%#= yield %>
-    <div id="wrapper">
-      <side-nav></side-nav>
-      
-      <div id="page-content-wrapper">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-12">
-              <ui-view></ui-view>
-            </div>
+  <div ng-include="'components/ta_navbar/_ta_navbar.html'"></div>
+  <div id="wrapper">
+    <side-nav></side-nav>
+    
+    <div id="page-content-wrapper">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <ui-view></ui-view>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
 </body>
 </html>
