@@ -5,12 +5,18 @@ angular.module('templateApp', ['ui.router', 'templates', 'ng-token-auth', 'ngFla
         .state('users',
           url: '/users',
           templateUrl: 'locations/users/_users.html',
-          controller: 'usersController'
+          controller: 'usersController',
+          resolve: 
+            auth: ($auth) ->
+              $auth.validateUser()
         )
         .state('products', 
           url: '/products',
           templateUrl: 'locations/products/_products.html',
-          controller: 'productsController'
+          controller: 'productsController',
+          resolve: 
+            auth: ($auth) ->
+              $auth.validateUser()
         )
         .state('info', 
           url: '/info',
@@ -27,7 +33,7 @@ angular.module('templateApp', ['ui.router', 'templates', 'ng-token-auth', 'ngFla
           templateUrl: 'locations/auth/_sign_up.html',
           controller: 'authController'
         )
-      $urlRouterProvider.otherwise 'users'
+      $urlRouterProvider.otherwise 'info'
 
       $authProvider.configure(apiUrl: '')
 ]);
