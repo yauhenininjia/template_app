@@ -16,6 +16,9 @@ angular.module('templateApp')
     scope.$on 'auth:logout-success', (e) ->
       user.currentUser = null
 
+    scope.$on 'auth:validation-success', (e, usr) ->
+      user.currentUser = usr
+
     user.signIn = (loginForm) ->
       $auth.submitLogin loginForm
 
