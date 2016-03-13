@@ -1,5 +1,5 @@
 angular.module('templateApp')
-  .factory('user', ['$rootScope', '$auth', '$state', ($rootScope, $auth, $state) ->
+  .factory('user', ['$rootScope', '$auth', '$state', 'Flash', ($rootScope, $auth, $state, Flash) ->
     user = 
       currentUser: null
 
@@ -7,6 +7,8 @@ angular.module('templateApp')
 
     scope.$on 'auth:login-success', (e, usr) ->
       user.currentUser = usr
+      message = '<strong> Wellcome!</strong>  You authenticated successfully.'
+      id = Flash.create('success', message, 0, {}, true)
       $state.go 'users'
 
     scope.$on 'auth:registration-email-success', (e, usr) ->

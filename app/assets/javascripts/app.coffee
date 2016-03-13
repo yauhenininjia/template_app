@@ -1,5 +1,5 @@
-angular.module('templateApp', ['ui.router', 'templates', 'ng-token-auth'])
-  .config(['$stateProvider', '$urlRouterProvider', '$authProvider',
+angular.module('templateApp', ['ui.router', 'templates', 'ng-token-auth', 'ngFlash'])
+  .config(['$stateProvider', '$urlRouterProvider', '$authProvider'
     ($stateProvider, $urlRouterProvider, $authProvider) ->
       $stateProvider
         .state('users',

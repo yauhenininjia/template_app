@@ -1,6 +1,9 @@
 angular.module('templateApp')
-  .controller('authController', ['$scope', '$http', '$auth', '$state', 'user', ($scope, $http, $auth, $state, user) ->
+  .controller('authController', ['$scope', '$http', '$auth', '$state', 'user', 'Flash', ($scope, $http, $auth, $state, user, Flash) ->
     $scope.signIn = user.signIn
 
     $scope.signUp = user.signUp
-]);
+
+    $scope.$on 'auth:login-success', () ->
+        
+])
