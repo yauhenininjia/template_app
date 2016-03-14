@@ -7,16 +7,25 @@ angular.module('templateApp')
 
     scope.$on 'auth:login-success', (e, usr) ->
       user.currentUser = usr
-      message = '<strong> Wellcome!</strong>  You authenticated successfully.'
+      message = '<b>Welcome!</b>  You was authenticated successfully.'
       id = Flash.create('success', message, 0, {}, true)
       $state.go 'users'
 
+    scope.$on 'auth:login-error', (e, reason) ->
+      reason.errors.forEach (error, index, errors) ->
+        message = '<b>Error! </b>' + error
+        id = Flash.create('danger', message, 0, {}, true)
+
     scope.$on 'auth:registration-email-success', (e, usr) ->
       user.currentUser = usr
+      message = '<b>Success!</b> Your registration was successfull.'
+      id = Flash.create('success', message, 0, {}, true)
       $state.go 'users'
 
     scope.$on 'auth:logout-success', (e) ->
       user.currentUser = null
+      message = '<b>Success!</b> You was logout successfully.'
+      id = Flash.create('success', message, 0, {}, true)
 
     scope.$on 'auth:validation-success', (e, usr) ->
       user.currentUser = usr

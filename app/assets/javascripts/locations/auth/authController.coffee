@@ -3,7 +3,4 @@ angular.module('templateApp')
     $scope.signIn = user.signIn
 
     $scope.signUp = user.signUp
-
-    $scope.$on 'auth:login-success', () ->
-        
 ])
